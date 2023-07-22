@@ -362,15 +362,26 @@ static void lorawan_join_failed_handler(void)
  *  B1	      QjE=	    4231    Switch blue LED on
  *  R0	      UjA=	    5230    Switch red LED off
  *  R1	      UjE=	    5231    Switch red LED on
- *
  *  SC        U0M=      5343    Set RGB LED Color
  *
- * e.g.: set RGB LED (HEX):
- * 5343 RED GREEN BLUE
- * RED:   5343FF0000
- * GREEN: 534300FF00
- * BLUE:  53430000FF
- *
+ *  e.g.: set RGB LED (HEX):
+ *  5343 0xRED 0xGREEN 0xBLUE
+ *  White:                   #5343FFFFFF
+ *  Silver (light gray):     #5343C0C0C0
+ *  Gray (dark gray):        #5343808080
+ *  Black:                   #5343000000
+ *  Red (high red):	         #5343FF0000
+ *  Maroon (low red):	       #5343800000
+ *  Yellow:	                 #5343FFFF00
+ *  Olive (brown):           #5343808000
+ *  Lime (high green):       #534300FF00
+ *  Green	(low green):       #5343008000
+ *  Aqua (high cyan):	       #534300FFFF
+ *  Teal (low cyan):         #5343008080
+ *  Blue (high blue):        #53430000FF
+ *  Navy (low blue):         #5343000080
+ *  Fuchsia (high magenta):  #5343FF00FF
+ *  Purple (low magenta):    #5343800080
  */
 void lorawan_rx_handler(lmh_app_data_t *app_data)
 {
